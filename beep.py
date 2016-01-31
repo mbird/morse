@@ -1,34 +1,22 @@
 import winsound
 import time
 
-# Create beep sound
-Freq = 2500 # Set Frequency To 2500 Hertz
-Dur = 1000 # Set Duration To 1000 ms == 1 second
-##winsound.Beep(Freq,Dur)
-##time.sleep(0.1) # wait for 0.1 seconds
+# set parameters for beep sound
+Freq = 2500 # set frequency to 2500 Hertz
+di = 200 # set duration for "di's" to 200 ms
+dah = 600 # set duration for "dah's" to 200 ms
+dit = 200 # set duration for "dit's" to 200 ms
 
-
-# create di
-Freq = 2500 # Set Frequency To 2500 Hertz
-di = 200 # Set Duration To 200 ms
-##winsound.Beep(Freq,di)
-##time.sleep(0.2) # wait for 0.2 seconds
-
-# create dah
-Freq = 2500 # Set Frequency To 2500 Hertz
-dah = 600 # Set Duration To 600 ms
-##winsound.Beep(Freq,dah)
-##time.sleep(0.2) # wait for 0.2 seconds
 
 # morse alphabet
 morse = {"A" : (di, dah),
-         "B" : (dah, di, di, di),
-         "C" : (dah, di, dah, di),
-         "D" : (dah, di, di),
-         "E" : (di,),
-         "F" : (di, di, dah, di),
-         "G" : (dah, dah, di),
-         "H" : (di, di, di, di)}
+         "B" : (dah, di, di, dit),
+         "C" : (dah, di, dah, dit),
+         "D" : (dah, di, dit),
+         "E" : (dit,),
+         "F" : (di, di, dah, dit),
+         "G" : (dah, dah, dit),
+         "H" : (di, di, di, dit)}
 
 message = "ABC"
 
