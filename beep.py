@@ -16,6 +16,7 @@ Freq = 2500 # set frequency to 2500 Hertz
 di = 150 # set duration for "di's" to 200 ms
 dah = 3 * di # set duration for "dah's" to 3 times di
 dit = di # set duration for "dit's" to di
+char = float(3 * di / 1000) # set duration between characters to 3 times di
 space = float(7 * di / 1000) # set duration between words to 7 times di
 
 
@@ -79,4 +80,4 @@ for letter in message:
     else:
         for tone in morse[letter]:
             winsound.Beep(Freq, tone)
-            time.sleep(0.2)
+        time.sleep(char)
