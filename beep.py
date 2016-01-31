@@ -12,7 +12,7 @@ import winsound
 import time
 
 # set parameters for beep sound
-Freq = 2500 # set frequency to 2500 Hertz
+freq = 1300 # set frequency of the tone used for morse code
 di = 150 # set duration for "di's" to 200 ms
 dah = 3 * di # set duration for "dah's" to 3 times di
 dit = di # set duration for "dit's" to di
@@ -79,5 +79,5 @@ for letter in message:
         time.sleep(space)
     else:
         for tone in morse[letter]:
-            winsound.Beep(Freq, tone)
+            winsound.Beep(freq, tone)
         time.sleep(char)
