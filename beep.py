@@ -21,11 +21,11 @@ winsound.Beep(Freq,dah)
 time.sleep(0.2) # wait for 0.2 seconds
 
 # morse alphabet
-morse = {"A" : "di dah",
-         "B" : "dah di di di",
-         "C" : "dah di dah di",
-         "D" : "dah di di",
-         "E" : "di",
-         "F" : "di di dah di",
-         "G" : "dah dah di",
-         "H" : "di di di di"}
+morse = {"A" : (di, dah),
+         "B" : (dah, di, di, di),
+         "C" : (dah, di, dah, di),
+         "D" : (dah, di, di),
+         "E" : (di,),
+         "F" : (di, di, dah, di),
+         "G" : (dah, dah, di),
+         "H" : (di, di, di, di)}
