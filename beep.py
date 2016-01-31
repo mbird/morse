@@ -2,10 +2,6 @@
 ## ask user for message to convert into morse code
 ## check message for unknown characters
 ## if unknown characters found, show unknown characters and ask for correction
-## if no unknown characters, show message again and aks for confirmation
-## if confirmation is given, convert into morse code
-## if confirmation is not given, ask for new input
-
 
 
 import winsound
@@ -75,9 +71,12 @@ morse = {"A" : (di, dah),
 message = input("Please enter your message: ").upper()
 
 for letter in message:
-    if letter == " ":
-        time.sleep(space)
-    else:
-        for tone in morse[letter]:
-            winsound.Beep(freq, tone)
-        time.sleep(char)
+    if letter not in morse:
+        print ("'" + letter + "'" + " is no valid character. Please rephrase your message.")
+        break
+        if letter == " ":
+            time.sleep(space)
+        else:
+            for tone in morse[letter]:
+                winsound.Beep(freq, tone)
+            time.sleep(char)
