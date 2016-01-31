@@ -74,6 +74,7 @@ for letter in message:
     if letter not in morse:
         print ("'" + letter + "'" + " is no valid character. Please rephrase your message.")
         break
+    else:
         if letter == " ":
             time.sleep(space)
         else:
