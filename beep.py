@@ -69,16 +69,34 @@ morse = {"A" : (di, dah),
          "=" : (dah, di, di, di, dah),
          " " : ()}
 
-message = input("Please enter your message: ").upper()
 
-for letter in message:
-    if letter not in morse:
-        print ("'" + letter + "'" + " is no valid character. Please rephrase your message.")
-        break
-    else:
-        if letter == " ":
-            time.sleep(space)
+def sendMessage():
+    message = input("Please enter your message: ").upper()
+
+    for letter in message:
+        if letter not in morse:
+            print ("'" + letter + "'" + " is no valid character. Please rephrase your message.")
+            break
         else:
-            for tone in morse[letter]:
-                winsound.Beep(freq, tone)
-            time.sleep(char)
+            if letter == " ":
+                time.sleep(space)
+            else:
+                for tone in morse[letter]:
+                    winsound.Beep(freq, tone)
+                time.sleep(char)
+
+
+def end():
+    check = input("Do you want to send another message? (Yes / No) ").lower()
+
+    if check == "yes":
+        sendMessage()
+        end()
+    elif check == "no":
+        print("Good Bye.")
+    else:
+        print("Please answer 'Yes' or No'.")
+        end()
+
+sendMessage()
+end()
